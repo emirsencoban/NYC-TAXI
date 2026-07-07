@@ -24,3 +24,13 @@ else:
 df = pd.read_parquet("25.01.parquet")
 print("Shape of the DataFrame:", df.shape)
 print("DataFrame Columns:", df.columns)
+
+#-- Transforming the Data --
+df_clean = df[(df["passenger_count"] > 0) & (df["passenger_count"] < 7)]
+df_clean = df_clean[df_clean["trip_distance"] > 0]
+df_clean = df_clean[df_clean["fare_amount"] > 0]
+df_clean = df_clean[df_clean["total_amount"] > 0]
+df_clean = df_clean.dropna(subset=["passenger_count", "trip_distance", "fare_amount", "total_amount", "tpep_pickup_datetime"])
+
+print("Shape of the cleaned DataFrame:", df_clean.shape)
+print("Number of rows dropped:", df.shape[0] - df_clean.shape[0])
