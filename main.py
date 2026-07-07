@@ -42,3 +42,8 @@ print("Connected to SQLite database.")
 df_clean.to_sql("yellow_tripdata_2025_01", conn, if_exists="replace", index=False)
 conn.close()
 print("Data loaded into SQLite database successfully.")
+
+# --- DATA PIPELINE METRICS ---
+# Total raw rows loaded from Parquet: 3,475,226
+# Cleaned/Valid rows loaded to SQL:  2,816,825
+# Discarded/Anomalous rows dropped:    658,401
