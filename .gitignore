@@ -1,10 +1,19 @@
-# Python-generated files
+# Python sanal ortamı
+.venv/
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.pyc
 
-# Virtual environments
-.venv
+# Büyük veri dosyaları (GitHub dosya sınırına takılmamak için)
+*.parquet
+*.csv
+*.xlsx
+
+# Yerel veri tabanı dosyaları
+*.db
+*.sqlite
+*.sqlite3
+
+# Proje yapılandırma ve UV yedekleri
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
